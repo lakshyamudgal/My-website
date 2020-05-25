@@ -1,0 +1,27 @@
+<script type="text/javascript">
+var myplants={
+    "212":{
+        type:"flowers",
+        list:"hy"
+    },
+    "34":{
+        HY:"dhdh",
+        Roll:"4"
+    }
+};
+    var copy= JSON.parse(JSON.stringify(myplants));
+    function updaterecord(id,prop,value){
+        if (value==""){
+            delete myplants[id][prop];
+        }
+        else if(prop=="type"){
+            myplants[id][prop]=myplants[id][prop] || [];
+            myplants[id][prop].push(value);
+        }else {
+            myplants[id][prop]=value;
+        }
+        return myplants;
+        }
+    console.log(updaterecord(212,"type","flowerchanged"));
+    
+</script>
